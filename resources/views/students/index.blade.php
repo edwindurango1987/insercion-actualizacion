@@ -7,12 +7,14 @@
         <h1 class="alert alert-success text-center"><i class="fa-solid fa-user">Personal Data Students</i></h1>
         <div class="row">
             <div class="col d-grid">
-               <a class="btn btn-primary" href="/students/create">Create</a>
+               <a class="btn btn-primary" href="/students/create"><i class="fa-solid fa-user-plus"></i></a>
             </div>
         <table class="table table-striped">
             <thead>
             <tr>
-                <th scope="col">Action</th>
+                <th scope="col">Show</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
                 <th scope="col">Code_student</th>
                 <th scope="col">Document_Number</th>
                 <th scope="col">Name</th>
@@ -33,8 +35,19 @@
             <tbody>
             @foreach($students as $student)
                 <tr>
-
-                    <td><a class="btn btn-success" href="{{route('students.edit',$student)}}">Edit</td>
+                    <td><a class="btn btn-primary" href="{{route('students.show',$student)}}"><i class="fa-solid fa-eye"></i></a></td>
+                    <td><a class="btn btn-success" href="{{route('students.edit',$student)}}"><i class="fa-solid fa-pen-to-square"></td>
+                    <td>
+                                <form 
+                                    action="{{route('students.destroy', $student)}}" 
+                                    method="post"
+                                    onsubmit="return confirm('Are you sure?')"
+                                >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></i></button>
+                                </form>
+                            </td>
                     <td> {{$student->id_personal_date}}</td>    
                     <td> {{$student->document_number}}</td>
                     <td> {{$student->name}}</td>
