@@ -36,6 +36,7 @@ class StudentRequest extends FormRequest
             'institutional_email'=> ['required','max:100','email','unique:students'],
             'cell_phone_number'=> ['required','max:10','unique:students','min:10']
 
+
         ];
     }
 
