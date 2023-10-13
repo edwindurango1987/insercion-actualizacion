@@ -1,8 +1,6 @@
 @extends('layaut.base')
-@section('title')
-@endsection
-
-@section('content')
+@section('content') {{-- @yield('content') --}}
+<div class="container">
     <main class="container">
         <h1 class="alert alert-success text-center"><i class="fa-solid fa-user">Personal Data Students</i></h1>
         <div class="row">
@@ -24,7 +22,7 @@
                 <th scope="col">Residence_address</th>
                 <th scope="col">Stratum</th>
                 <th scope="col">Residence_type</th>
-                <th scope="col">Height</th>
+                <th scope="col">Height_in_CM</th>
                 <th scope="col">Institutional_email</th>
                 <th scope="col">Cell_phone_number</th>
 

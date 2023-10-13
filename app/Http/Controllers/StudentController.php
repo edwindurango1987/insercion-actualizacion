@@ -83,7 +83,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, student $student)
+    public function update(StudentRequest $request, student $student)
     {
         //$student->document_number = $request->document_number;
         //$student->name = $request->name;

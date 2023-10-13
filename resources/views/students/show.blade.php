@@ -1,6 +1,5 @@
     @extends('layaut.base')
-    @section('title', "Student | $student->name")
-    @section('container')
+    @section('content') {{-- @yield('content') --}}
 
     <main class="container">
         <div class="row">
@@ -50,3 +49,6 @@
         <div class="d-grid gap-2 mt-1">
             <a href="{{ route('students.index') }}" class="btn btn-primary">Back</a>
     </main>
+</div>
+@endsection
+

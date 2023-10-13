@@ -33,8 +33,8 @@ class StudentRequest extends FormRequest
             'stratum'=> ['required'],
             'residence_type'=> ['required'],
             'height'=> ['required','max:250','numeric'],
-            'institutional_email'=> ['required','max:100','email','unique:students'],
-            'cell_phone_number'=> ['required','max:10','unique:students','min:10']
+            'institutional_email'=> ['required','max:100','email'],
+            'cell_phone_number'=> ['required','max:10']
 
 
         ];
@@ -61,10 +61,8 @@ class StudentRequest extends FormRequest
             'institutional_email.required' => 'A institutional email is required',
             'institutional_email.max' => 'A institutional email must be at most 100 characters',
             'institutional_email.email' => 'A institutional email must be a valid email',
-            'institutional_email.unique' => 'A institutional email must be unique',
             'cell_phone_number.required' => 'A cell phone number is required',
             'cell_phone_number.max' => 'A cell phone number must be at most 10 characters',
-            'cell_phone_number.unique' => 'A cell phone number must be unique',
             'cell_phone_number.min' => 'A cell phone number must be at least 10 characters'
         ];
     }
